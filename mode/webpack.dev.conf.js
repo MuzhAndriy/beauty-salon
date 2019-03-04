@@ -14,7 +14,7 @@ module.exports = {
         filename: './js/[name].js',
         publicPath: '/'
     },
-    devtool: 'eval-source-map',
+    devtool: 'cheap-eval-source-map',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         hot: true,
@@ -82,7 +82,11 @@ module.exports = {
         }),
         new CopyPlugin([
             {from: './src/img',to: './img'},
-        ])
+        ]),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+          })
 
     ]
 }
