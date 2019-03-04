@@ -82,7 +82,6 @@ module.exports = {
         }),
         new CopyPlugin([
             {from: './src/img',to: './img'},
-            {from: './src/fonts',to: './fonts'},
         ])
 
     ]
