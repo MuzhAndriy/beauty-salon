@@ -15,33 +15,56 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: '/node_modules/'
-        },
-        {
-            test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-        },
-        {
-            test: /\.(sa|sc|c)ss$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                {
-                    loader: 'postcss-loader',
+                test: /\.js$/,
+                exclude: '/node_modules/',
+                use: {
+                    loader: 'babel-loader',
                     options: {
-                        config: {
-                            path: './postcss.config.js'
-                        }
+                      presets: ['@babel/preset-env']
+                    }
+                  }    
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/,
+                use: {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: './img'
+                        },
+                    }
+                    
+            },
+
+            {
+                test: /\.(eot|ttf|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: './fonts'
+                },
+            },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../' 
                     }
                 },
-                'sass-loader',
-            ],
-        }]
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            config: {
+                                path: './postcss.config.js'
+                            }
+                        }
+                    },
+                    'sass-loader',
+                ],
+            }
+        ]
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -58,7 +81,7 @@ module.exports = {
         }),
         new CopyPlugin([
             {from: './src/img',to: './img'},
-            {from: './src/fonts', to:'./fonts'}    
+            // {from: 'D./src/fonts', to:'./fonts'}    
         ])
 
     ]

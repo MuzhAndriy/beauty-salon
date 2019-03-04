@@ -30,10 +30,22 @@ module.exports = {
                 exclude: '/node_modules/'
             },
             {
-                test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
+                test: /\.(png|jpe?g|gif|svg)$/,
+                use: {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: './img'
+                        },
+                    }
+                    
+            },
+            {
+                test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
+                    outputPath: './fonts'
                 },
             },
             {

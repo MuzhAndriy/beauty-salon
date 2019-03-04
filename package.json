@@ -36,6 +36,5 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1"
   }
 }
