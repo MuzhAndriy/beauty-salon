@@ -1,10 +1,27 @@
 @import 'utils/libs.scss';
-@import 'utils/mixins.scss';
-@import 'utils/vars.scss';
+@import 'utils/utility.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'utils/fonts.scss';
+@import 'modules/header';
+@import 'modules/services';
 
 
 html{
+    background: #1a1a1a;
     font-family: $mainFont;
     font-size: $mainFontSize;
+    line-height: $mainLineHeight;
+    color: $mainFontColor;
+}
+section ,header, footer{
+    background-size: cover; 
+    background-position:  center;
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+#my-page{
+    max-width: 100%;
 }

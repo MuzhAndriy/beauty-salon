@@ -42,7 +42,7 @@ module.exports = {
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
-                loader: 'file-loader',
+                loader: 'url-loader?limit=8192',
                 options: {
                     name: '[name].[ext]',
                     outputPath: './fonts'
@@ -65,9 +65,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            "process.env.NODE_ENV": JSON.stringify("development")
-        }),
         new webpack.EvalSourceMapDevToolPlugin({
             filename: '[file].map'
         }),

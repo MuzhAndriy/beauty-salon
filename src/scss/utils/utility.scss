@@ -3,9 +3,9 @@ $mainFont                : 'Raleway', Verdana, Arial, sans-serif;
 $secondFont              : 'FiraSans', Verdana, Arial, sans-serif;
 // Size
 $mainFontSize            : 18px;
-$mainFontColor           : #101010;
+$mainFontColor           : #fff;
 $mainFontWeight          : 400;
-$mainLineHeight          : 1.4;
+$mainLineHeight          : 1.7;
 // Main color
 $primary-color           : #f9c766;
 $success-color           : #26de81;
@@ -16,4 +16,14 @@ $tableWidth              : 768px;
 $phoneWidth              : 480px;
 $smPhoneWidth            : 320px;
 
-
+@function rem($pixels, $context: $mainFontSize) {
+    @if (unitless($pixels)) {
+      $pixels: $pixels * 1px;
+    }
+  
+    @if (unitless($context)) {
+      $context: $context * 1px;
+    }
+  
+    @return $pixels / $context * 1rem;
+  }
