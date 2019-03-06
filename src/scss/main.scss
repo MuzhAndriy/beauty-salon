@@ -1,6 +1,5 @@
 @import 'utils/libs.scss';
 @import 'utils/utility.scss';
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'utils/fonts.scss';
 @import 'modules/header';
 @import 'modules/services';
@@ -20,7 +19,9 @@ section ,header, footer{
 }
 a{
     text-decoration: none;
-    color: inherit;
+    color: #ffffff4d;
+    font-family: inherit;
+    
 }
 #my-page{
     max-width: 100%;
