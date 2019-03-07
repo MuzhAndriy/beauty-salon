@@ -19,10 +19,19 @@ section ,header, footer{
 }
 a{
     text-decoration: none;
-    color: #ffffff4d;
+    color: #fff;
     font-family: inherit;
     
 }
-#my-page{
-    max-width: 100%;
+h1, h2, h3, h4, h5, h6{
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+.button{
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px;
+    text-transform: uppercase;
+    padding: 15px 45px;
+    border-radius: 2px;
 }
