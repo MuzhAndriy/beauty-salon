@@ -1,19 +1,10 @@
 .site-header {
     min-height: 100vh;
 }
-
-.topline {
-    padding: rem(40) 0 rem(40);
-    width: 100%;
-    z-index: 1;
-    position: absolute;
-
-}
-
 .logo {
     width: 125px;
     height: auto;
-    margin: 0 45px;
+    margin: rem(40) 45px 0;
 }
 
 .tel {
@@ -32,20 +23,21 @@
 }
 
 .hamburger {
-    width: 46px;
+    width: 40px;
     height: 40px;
     display: block;
     position: absolute;
     background: none;
     outline: none;
     cursor: pointer;
-    right: 15px;
-    top: 30px;
+    right: 10px;
+    top: 28px;
+    z-index: 10;
 
     &__box {
         display: block;
         position: relative;
-        width: 45px;
+        width: 40px;
         height: 40px;
     }
 
@@ -63,7 +55,6 @@
             transform: translateY(-10px);
             position: absolute;
             top: 50%;
-            margin-top: -1px;
             left: 0;
             width: 34px;
             height: 1.5px;
@@ -72,17 +63,9 @@
         }
 
         &::after {
-            content: '';
-            transform: translateY(10px);
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 34px;
-            height: 1.5px;
-            background: #fff;
-            transition: all ease .2s;
+            @extend .hamburger__line::before;
+            transform: translateY(9px);
         }
-
         &_active {
             height: 0px;
 
@@ -97,7 +80,31 @@
         }
     }
 }
+// SOC
 
+.heder-social{
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 1px solid rgba(#fff, .1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social{
+    display: inline-block;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    background: #5c5c5c;
+    border-radius: 50%;
+    text-align: center;
+    margin: 10px;
+    
+}
 // MMENU
 
 .mm-navbar {
@@ -137,13 +144,21 @@
         }
     }
 }
+.mm-wrapper_opened {
+    overflow-y: scroll;
+}
+.mm-panels, .mm-panel>.mm-panel_has-navbar{
+    right: -18px;
+}
+
+// TITLE
 
 .headers-title {
-    width: 42%;
+    width: 40%;
     text-align: center;
-
     &__welcome {
         position: relative;
+        
         font-size: 14px;
         font-weight: 300;
         & span {
