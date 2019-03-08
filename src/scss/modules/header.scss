@@ -1,13 +1,14 @@
 .site-header {
     min-height: 100vh;
 }
+
 .logo {
     width: 125px;
     height: auto;
     margin: rem(40) 45px 0;
 }
 
-.tel {
+.header-tel {
     position: absolute;
     right: 85px;
     top: 35px;
@@ -66,6 +67,7 @@
             @extend .hamburger__line::before;
             transform: translateY(9px);
         }
+
         &_active {
             height: 0px;
 
@@ -80,10 +82,10 @@
         }
     }
 }
-// SOC
 
-.heder-social{
-    width: 60px;
+// SOC RIGHT
+
+.heder-social {
     height: 100%;
     position: absolute;
     right: 0;
@@ -94,17 +96,63 @@
     justify-content: center;
     align-items: center;
 }
-.social{
-    display: inline-block;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
-    background: #5c5c5c;
-    border-radius: 50%;
-    text-align: center;
-    margin: 10px;
-    
+
+.social {
+    &__icon {
+        display: block;
+        height: 38px;
+        width: 38px;
+        background: #5c5c5c;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        margin: 7px 10px;
+        color: #353335;
+
+        &:hover {
+            background: rgba(#fff, .4);
+        }
+    }
 }
+
+// BOTTOM LINE
+
+.header-contacts {
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid rgba(#fff, .1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(#000, .2);
+}
+
+.contacts {
+    font-weight: 300;
+    font-size: 14px;
+    margin: 14px 0;
+    display: inline-block;
+    white-space: nowrap;
+
+    &.tel {
+        font-family: $secondFont;
+    }
+
+    & .fas,
+    .far {
+        color: #555555;
+        margin: 0 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+
 // MMENU
 
 .mm-navbar {
@@ -137,43 +185,81 @@
 
         &::before {
             content: '\f3a5';
-            font-family: 'Font Awesome 5 Free';
+            font-family: $avesome;
             color: #fff;
             margin: 0 10px;
             font-size: 12px;
         }
     }
 }
+
 .mm-wrapper_opened {
     overflow-y: scroll;
 }
-.mm-panels, .mm-panel>.mm-panel_has-navbar{
+
+.mm-panels,
+.mm-panel>.mm-panel_has-navbar {
     right: -18px;
 }
 
 // TITLE
 
 .headers-title {
-    width: 40%;
+    width: 42%;
     text-align: center;
+    margin: 0 40px;
     &__welcome {
-        position: relative;
-        
-        font-size: 14px;
-        font-weight: 300;
+        display: flex;
+        align-items: center;
         & span {
-            &::before {
-                content: '';
-                height: 1px;
-                position: relative;
-                background: #fff;
-                width: 100%;
-            }
-            // &::after {
-            //     @extend .headers-title__welcome span::before;
-            //     right: 0;
-            //     top: 50%;
-            // }
+            margin: 0 10px;
+            font-size: 14px;
+            font-weight: 300;
+            white-space: nowrap;
+        }
+        &::before, &::after{
+            content: '';
+            height: 1px;
+            background: #fff;
+            width: 100%;
+            position: relative;
+            display: inline-block;
+        }
+    }
+
+    & h1 {
+        font-size: rem(70);
+        font-weight: 100;
+        padding: 0 0 rem(30);
+        margin: 0 0 rem(30);
+        border-bottom: 1px solid #fff;
+        white-space: nowrap;
+    }
+
+    &__city {
+        font-weight: 800;
+        font-size: rem(18);
+
+        &::before,
+        &::after {
+            content: '\f005';
+            color: #555555;
+            font-weight: bold;
+            font-size: rem(12);
+            margin: 0 5px;
+            font-family: $avesome;
+        }
+    }
+
+    &__button {
+        background: $primaryColor;
+        width: 180px;
+        height: 55px;
+        color: #fff;
+
+
+        &:hover {
+            border-color: #e9c47b;
         }
     }
 }

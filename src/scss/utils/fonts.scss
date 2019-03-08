@@ -17,6 +17,15 @@
     font-style: normal;
     font-weight: 700;
 }
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/RalewaySemiBold.eot");
+    src: url("../fonts/RalewaySemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/RalewaySemiBold.woff") format("woff"),
+        url("../fonts/RalewaySemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
 
 @font-face {
     font-family: "Raleway";
@@ -27,6 +36,17 @@
     font-style: normal;
     font-weight: 300;
 }
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/RalewayThin.eot");
+    src: url("../fonts/RalewayThin.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/RalewayThin.woff") format("woff"),
+        url("../fonts/RalewayThin.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
 @font-face {
     font-family: "FiraSans";
     src: url("../fonts/FiraSansRegular.eot");
