@@ -1,6 +1,10 @@
 $(document).ready(function () {
     $('#my-menu').mmenu({
         extensions: ["theme-black", "border-none", "pagedim-black", "position-right", "fx-menu-slide", "offcanvas"],
+        onClick: {
+           close: "true",
+           setSelected: "false"
+         },
         navbar: {
             title: "<img src='img/logo-1.svg' alt='Салон S&Mitler'>"
         },
