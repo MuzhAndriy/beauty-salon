@@ -1,14 +1,9 @@
-const path = require('path')
+const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const HtmlPlugin = require('html-webpack-plugin')
-
-module.exports = {
+const merge = require('webpack-merge');
+const common = require('./webpack.common');
+module.exports = merge(common, {
     mode: 'development',
-    entry: {
-        app: './src/index.js'
-    },
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: './js/[name].js',
@@ -24,37 +19,7 @@ module.exports = {
         watchContentBase: true
     },
     module: {
-        rules: [{
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: '/node_modules/'
-            },
-            {
-                test: /\.html$/,
-                use: {
-                    loader: 'html-loader'
-                }
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)$/,
-                exclude: '/node_modules/',
-                use: {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: './img'
-                        },
-                    }
-                    
-            },
-            {
-                test: /\.(eot|ttf|woff|woff2)$/,
-                loader: 'url-loader?limit=8192',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: './fonts'
-                },
-            },
+        rules: [
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [{
@@ -74,20 +39,6 @@ module.exports = {
     plugins: [
         new webpack.EvalSourceMapDevToolPlugin({
             filename: '[file].map'
-        }),
-        new HtmlPlugin({
-            template: './src/index.html'
-        }),
-        new MiniCssExtractPlugin({
-            filename: './css/styles.css'
-        }),
-        new CopyPlugin([
-            {from: './src/img',to: './img'},
-        ]),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-          })
-
+        })
     ]
-}
+});

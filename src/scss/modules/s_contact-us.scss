@@ -1,0 +1,71 @@
+.contact-us {
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    padding: 7%;
+
+    &::before {
+        content: '';
+        width: 50%;
+        right: 0;
+        top: 0;
+        height: 100%;
+        position: absolute;
+        background-color: rgba($primaryColor, .95);
+    }
+}
+
+.callback {
+    position: relative;
+    color: rgba(#444, 0.8);
+    &__logo {
+        width: 100px;
+        height: auto;
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    &__text {
+        margin: 0 0 22px;
+
+    }
+
+    &__input {
+        display: inline-block;
+        height: 50px;
+        width: 100%;
+        border-width: 1px 1px 2px 1px;
+        border-style: solid;
+        border-color: rgba(#555, 0.2);
+        margin: 15px 0;
+        color: rgba(#444, 0.8);
+        background: transparent;
+        padding: 8px 22px;
+        border-radius: 2px;
+        outline: none;
+
+        @include placehold {
+           color: rgba(#444, 0.8);
+        }
+
+        &:focus {
+            border-color: rgba(#555, 0.5);
+
+            @include placehold {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+        }
+    }
+    &__select{
+        margin-bottom: 30px;
+    }
+    &__btn {
+        color: #444;
+    }
+}

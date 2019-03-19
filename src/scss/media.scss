@@ -1,0 +1,196 @@
+@media only screen and (max-width : 1200px) {
+    .headers-title h1 {
+        font-size: 60px;
+    }
+
+    // services
+    .services-item {
+        flex-direction: column-reverse;
+    }
+
+}
+
+@media only screen and (max-width : 992px) {
+    html {
+        font-size: 15px;
+    }
+
+    // header
+    .headers-title {
+        &__city {
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        & h1 {
+            font-size: 54px;
+            margin: 0 0 20px;
+            padding: 0 0 15px;
+        }
+
+    }
+
+    // contacy-us
+    .contact-us {
+        background-size: cover;
+
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+
+    // header
+    .contacts:last-child {
+        display: none;
+    }
+
+    .hamburger {
+        right: 10;
+        width: 38px;
+    }
+
+
+    .headers-title {
+        &__welcome span {
+            font-size: 13px;
+        }
+
+        & h1 {
+            font-size: 40px;
+        }
+
+        &__city {
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        &__button {
+            width: 160px;
+            height: 45px;
+        }
+    }
+
+    // s_salon
+    .desc {
+        &__title {
+            margin: 20px 0 26px;
+            font-size: 27px;
+        }
+    }
+
+    .callback {
+        &__logo {
+            width: 80px;
+            height: auto;
+        }
+
+        &__title {
+            font-size: 26px;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+
+    // header
+    .header-contacts {
+        right: 49px;
+    }
+
+    .contacts {
+        &:first-child {
+            display: none;
+        }
+    }
+
+    .header-tel {
+        display: none;
+    }
+
+    .headers-title {
+        &__welcome {
+            justify-content: center;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+
+            & span {
+                font-size: 10px;
+
+
+            }
+        }
+
+        & h1 {
+            font-size: 27px;
+            margin: 0 0 10px;
+            padding: 0 0 10px;
+        }
+
+        &__city {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        &__button {
+            width: 150px;
+            margin: 15px 0 0;
+            padding: 12px;
+        }
+    }
+
+    .social {
+        &__icon {
+            height: 34px;
+            width: 34px;
+            line-height: 34px;
+            margin: 7px 7px;
+        }
+    }
+
+    .hamburger {
+        right: 5;
+    }
+
+    .headers-title__description {
+        margin: 7px 0;
+    }
+
+    .desc {
+        &__title {
+            margin: 14px 0 5px;
+            font-size: 24px;
+        }
+    }
+    .callback{
+        &__select{
+        margin: 20px 0 5px;
+        }
+        &__text{
+            margin: 0 0 16px;
+        }
+        &__btn{
+            width: 200px;
+            height: 50px;
+        }
+    }
+}
+
+// salon
+
+
+
+
+@media only screen and (max-width : 320px) {
+    .salon-fotorama {
+        display: none;
+    }
+}

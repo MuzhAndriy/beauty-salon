@@ -1,0 +1,36 @@
+.salon {
+	background-size: cover;
+	background-position: center;
+}
+.section-overlay {
+	padding: 5% 0;
+	background: rgba(#3d3d3d, 0.9);
+}
+
+.desc {
+	&__title {
+		font-weight: 700;
+		font-size: 30px;
+		white-space: nowrap;
+		margin: 25px 0 30px;
+	}
+	&__logo {
+		font-weight: 700;
+		font-size: 16px;
+		color: $primaryColor;
+	}
+}
+
+// fotorama
+
+.fotorama{
+	&__nav-wrap{
+	position: absolute;
+	bottom: 15px;
+	padding: 0 30px;
+	width: 100%;
+	}
+	&__thumb-border{
+		border-color: #3d3c3c;
+	}
+}

@@ -1,30 +1,47 @@
 // Font
-$mainFont                : 'Raleway', Verdana, Arial, sans-serif;
-$secondFont              : 'FiraSans', Verdana, Arial, sans-serif;
-$avesome                 : 'Font Awesome 5 Free';
+$mainFont : 'Raleway',
+Verdana,
+Arial,
+sans-serif;
+$secondFont : 'FiraSans',
+Verdana,
+Arial,
+sans-serif;
+$avesome : 'Font Awesome 5 Free';
 // Size
-$mainFontSize            : 16px;
-$mainFontColor           : #fff;
-$mainFontWeight          : 400;
-$mainLineHeight          : 1.7;
+$mainFontSize : 16px;
+$mainFontColor : #fff;
+$mainFontWeight : 400;
+$mainLineHeight : 1.7;
 // Main color
-$primaryColor            : #f9c766;
-$success-color           : #26de81;
-$danger-color            : #fc5c65;
-$desktopWidth            : 1200px;
-$smDesktopWidth          : 992px;
-$tabletWidth             : 768px;
-$phoneWidth              : 480px;
-$smPhoneWidth            : 320px;
+$primaryColor : #f9c766;
+$blue : #66c7cd;
+$red : #f86868;
+
+$success-color : #26de81;
+$danger-color : #fc5c65;
+$desktopWidth : 1200px;
+$smDesktopWidth : 992px;
+$tabletWidth : 768px;
+$phoneWidth : 480px;
+$smPhoneWidth : 320px;
 
 @function rem($pixels, $context: $mainFontSize) {
-    @if (unitless($pixels)) {
-      $pixels: $pixels * 1px;
-    }
-  
-    @if (unitless($context)) {
-      $context: $context * 1px;
-    }
-  
-    @return $pixels / $context * 1rem;
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
   }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@mixin placehold {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}

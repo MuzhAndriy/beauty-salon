@@ -1,18 +1,11 @@
-const path = require('path')
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const HtmlPlugin = require('html-webpack-plugin')
-const CleanWebpack = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'production',
     entry: {
         app: './src/index.js'
-    },
-    output: {
-        path: path.resolve(__dirname, '../dist'),
-        filename: './js/[name].[contentHash].js',
     },
     module: {
         rules: [{
@@ -42,7 +35,6 @@ module.exports = {
                 }
 
             },
-
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'url-loader?limit=8192',
@@ -52,32 +44,9 @@ module.exports = {
                     outputPath: './fonts'
                 },
             },
-            {
-                test: /\.(sa|sc|c)ss$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: '../'
-                        }
-                    },
-                    'css-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            config: {
-                                path: './postcss.config.js'
-                            }
-                        }
-                    },
-                    'sass-loader',
-                ],
-            }
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: './css/styles.[contentHash].css'
-        }),
         new HtmlPlugin({
             template: './src/index.html' 
         }),
@@ -88,6 +57,7 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
+            'window.jQuery': 'jquery'
         })
     ]
 }

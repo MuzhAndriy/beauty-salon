@@ -1,0 +1,102 @@
+.owl-item:nth-child(2n+2) .services-item{
+    flex-direction: column-reverse;
+}
+$colors: $blue,
+$red,
+$primaryColor;
+
+@for $i from 1 through length($colors) {
+    .owl-item:nth-child(#{length($colors)}n+#{$i}) {
+        background-color: nth($colors, $i);
+    }
+}
+.services-item {
+    display: flex;
+    flex-direction: column;
+    &__img {
+        background-size: cover;
+        background-position: center;
+        transition: grayscale .7s; 
+        filter: grayscale(.5);
+        &:hover {
+        filter: grayscale(0);
+    }
+    }
+    
+
+    
+}
+
+.services-content {
+    text-align: center;
+    align-items: center;
+    font-weight: 300;
+    &__logo {
+        margin: rem(45) auto rem(10);
+        width: 100px !important;
+        height: auto;
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    &__sub {
+        font-size: 18px;
+        margin: 0 0 rem(15);
+        text-transform: uppercase;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        width: 76%;
+    }
+
+    &__service {
+        padding: 9px;
+        border-bottom: 1px solid rgba(#000, .1);
+        font-size: 18px;
+    }
+
+    &__price {
+        color: #4a4a4a;
+        font-weight: 700;
+
+    }
+
+    &__btn {
+        margin: 25px 0 rem(35);
+        color: #444;
+
+        &:hover {
+            border-color: rgba(#2e2d2d, .1)
+        }
+    }
+}
+.owl-carousel {
+& .owl-nav{
+    display: block !important;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    & button.owl-next{
+        background: #fff;
+        color: #4a4a4a;
+        height: 55px;
+        width: 55px;
+        position: absolute;
+        font-size: 25px;
+        right: 0;
+        outline: none;
+        border-radius: 3px;
+    }
+    & button.owl-prev{
+        @extend button.owl-next;
+        left: 0;
+    }
+
+}}
