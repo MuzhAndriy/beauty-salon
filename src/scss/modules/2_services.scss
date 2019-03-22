@@ -6,7 +6,7 @@ $red,
 $primaryColor;
 
 @for $i from 1 through length($colors) {
-    .owl-item:nth-child(#{length($colors)}n+#{$i}) {
+    .services-carousel .owl-item:nth-child(#{length($colors)}n+#{$i}) {
         background-color: nth($colors, $i);
     }
 }
@@ -77,7 +77,7 @@ $primaryColor;
         }
     }
 }
-.owl-carousel {
+.services-carousel {
 & .owl-nav{
     display: block !important;
     position: absolute;

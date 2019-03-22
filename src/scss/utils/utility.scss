@@ -26,6 +26,11 @@ $tabletWidth : 768px;
 $phoneWidth : 480px;
 $smPhoneWidth : 320px;
 
+@mixin opacity-animation ($opacity) {
+    opacity: $opacity/100;
+    filter: alpha(opacity= $opacity);
+}
+
 @function rem($pixels, $context: $mainFontSize) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;

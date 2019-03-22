@@ -1,11 +1,164 @@
+body{
+    opacity: 1; 
+    overflow-x: visible;
+}
 @import 'utils/libs';
 @import 'utils/utility';
-@import 'baseStyles';
 @import 'utils/fonts';
-@import 'modules/header';
-@import 'modules/s_services';
-@import 'modules/s_salon';
-@import 'modules/s_contact-us';
-@import 'modules/s_reviews';
-@import 'media';
 
+html {
+    background: #1a1a1a;
+    font-family: $mainFont;
+    font-size: $mainFontSize;
+    line-height: $mainLineHeight;
+    color: $mainFontColor;
+}
+section,
+header,
+footer {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.button {
+    display: inline-block;
+    border: 0;
+    text-transform: uppercase;
+    padding: 17px 26px 15px;
+    border-radius: 2px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 225px;
+    height: 55px;
+    background: #fff;
+    border-bottom: 3px solid rgba(#1a1a1a, .2);
+}
+
+.firasans {
+    font-family: $secondFont;
+}
+
+#my-page,
+#my-header,
+#my-content,
+#my-footer {
+    background-color: #1a1a1a;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #1a1a1a;
+}
+
+.pulse {
+    position: relative;
+    left: 50%;
+    top: 50vh;
+    margin: 0 -40px;
+
+    &::before,
+    &::after {
+        content: '';
+        border: 5px solid #323233;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    &::before {
+        animation: .8s ease-in pulse-outer infinite;
+    }
+    &::after {
+        animation: .8s linear pulse-inner infinite;
+    }
+
+}
+
+@keyframes pulse-outer {
+    0% {
+        @include opacity-animation(100);
+    }
+
+    50% {
+        @include opacity-animation(50);
+    }
+
+    100% {
+        @include opacity-animation(0);
+    }
+}
+@keyframes pulse-inner {
+    0% {
+        @include opacity-animation(0);
+        transform: scale(0);
+    }
+
+    100% {
+        @include opacity-animation(100);
+        transform: scale(1);
+    }
+}
+
+
+
+.up-button {
+    display: block;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    z-index: 20;
+    right: -100px;
+    bottom: 30px;
+    background: #e0e0e0;
+    color: #666;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    font-size: 26px;
+    opacity: .5;
+    transition: all .25s ease;
+
+    &:hover {
+        background: $primaryColor;
+        color: #fff;
+    }
+
+    &_active {
+        right: 20px;
+    }
+}
+
+
+@import 'modules/1_header';
+@import 'modules/2_services';
+@import 'modules/3_salon';
+@import 'modules/4_contacts';
+@import 'modules/5_reviews';
+@import 'modules/6_partners';
+@import 'modules/7_footer';
+@import 'media';
